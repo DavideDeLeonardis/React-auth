@@ -1,5 +1,5 @@
 import { Fragment, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 import AuthContext from "../../store/auth-context";
 
@@ -7,12 +7,11 @@ import "../../assets/scss/partials/_nav.module.scss";
 
 const Nav = () => {
    const authCtx = useContext(AuthContext);
-
-   const isLoggedIn = authCtx.isLoggedIn;
+   const history = useHistory();
 
    const logoutHandler = () => {
       authCtx.logout();
-      // redirect the user
+      history.replace("/");
    };
 
    const loggedInContent = (
@@ -38,7 +37,7 @@ const Nav = () => {
             <h3>React Auth</h3>
          </Link>
          <nav>
-            <ul>{isLoggedIn ? loggedInContent : loggedOutContent}</ul>
+            <ul>{authCtx.isLoggedIn ? loggedInContent : loggedOutContent}</ul>
          </nav>
       </header>
    );

@@ -1,0 +1,22 @@
+form > div {
+   margin: 10px 0;
+
+   label {
+      margin-right: 10px;
+   }
+}
+
+button {
+   cursor: pointer;
+   font: inherit;
+   color: #ffffff;
+   background-color: #3777ff;
+   border: 1px solid #3777ff;
+   border-radius: 4px;
+   padding: 0.5rem 2.5rem;
+}
+
+button:hover {
+   background-color: #5d90ff;
+   border-color: #5d90ff;
+}

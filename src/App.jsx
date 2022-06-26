@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 
 import Layout from "./components/Layout/Layout.jsx";
-import UserProfile from './components/Profile/UserProfile';
+import ProfilePage from "./pages/ProfilePage";
 import HomePage from "./pages/HomePage.jsx";
 import AuthPage from "./pages/AuthPage";
 import AuthContext from "./store/auth-context";
@@ -24,8 +24,7 @@ function App() {
                </Route>
             )}
             <Route path="/profile">
-               {authCtx.isLoggedIn && <UserProfile />}
-               {!authCtx.isLoggedIn && <Redirect to="/auth" />}
+               {authCtx.isLoggedIn ? <ProfilePage /> : <Redirect to="/auth" />}
             </Route>
             <Route path="*">
                <Redirect to="/" />

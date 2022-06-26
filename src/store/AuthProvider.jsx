@@ -71,7 +71,7 @@ const AuthProvider = (props) => {
    }, [tokenData, logoutHandler]);
 
    const contextValue = {
-      token: token,
+      token,
       isLoggedIn: userIsLoggedIn,
       login: loginHandler,
       logout: logoutHandler,
