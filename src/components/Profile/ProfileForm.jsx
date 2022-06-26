@@ -16,24 +16,26 @@ const ProfileForm = () => {
 
       const enteredNewPassword = newPasswordInputRef.current.value;
 
-      // add validation
-
-      fetch(
-         "https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyDHYQqiDnEnH1nhZGySks4rMmMcVXYs-p4",
-         {
-            method: "POST",
-            body: JSON.stringify({
-               idToken: authCtx.token,
-               password: enteredNewPassword,
-               returnSecureToken: false,
-            }),
-            headers: {
-               "Content-Type": "application/json",
-            },
-         }
-      ).then(() => {
-         history.replace("/");
-      });
+      if (enteredNewPassword.trim().length < 7) {
+         return;
+      } else {
+         fetch(
+            "https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyDHYQqiDnEnH1nhZGySks4rMmMcVXYs-p4",
+            {
+               method: "POST",
+               body: JSON.stringify({
+                  idToken: authCtx.token,
+                  password: enteredNewPassword,
+                  returnSecureToken: false,
+               }),
+               headers: {
+                  "Content-Type": "application/json",
+               },
+            }
+         ).then(() => {
+            history.replace("/");
+         });
+      }
    };
 
    return (

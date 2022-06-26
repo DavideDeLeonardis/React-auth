@@ -2,9 +2,6 @@
 
 ## Authentication test app made with React and Firebase, possibility of log in, log out and change password
 
-Missing:
--  validation AuthForm and ProfileForm
-
 <br>
 
 ## Install dependencies
