@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import AuthContext from "../../store/auth-context";
 
-import "../../assets/scss/partials/_nav.scss";
+import "../../assets/scss/partials/_nav.module.scss";
 
 const Nav = () => {
    const authCtx = useContext(AuthContext);

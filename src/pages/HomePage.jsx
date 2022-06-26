@@ -1,3 +1,5 @@
+import "../assets/scss/partials/_home.module.scss";
+
 const HomePage = () => {
    return (
       <section>
