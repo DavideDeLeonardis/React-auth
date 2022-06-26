@@ -1,10 +1,22 @@
-import HomePage from "./pages/HomePage";
+import { Switch, Route, Redirect } from "react-router-dom";
+
+import Layout from "./components/Layout/Layout.jsx";
+import HomePage from "./pages/HomePage.jsx";
+
+import "./assets/scss/index.scss";
 
 function App() {
    return (
-      <div className="App">
-         <HomePage />
-      </div>
+      <Layout>
+         <Switch>
+            <Route path="/" exact>
+               <HomePage />
+            </Route>
+            <Route path="*">
+               <Redirect to="/" />
+            </Route>
+         </Switch>
+      </Layout>
    );
 }
 

@@ -1,0 +1,17 @@
+@use "../mixins" as mixin;
+
+header,
+ul {
+   @include mixin.flex($gap: 30px);
+   color: rgb(27, 99, 255);
+   background-color: #e1e1e1;
+
+   li:hover {
+      text-decoration: underline;
+   }
+}
+
+header {
+   @include mixin.flex($justify: space-between);
+   padding: 20px;
+}
